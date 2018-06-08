@@ -1,8 +1,7 @@
 FROM microsoft/aspnetcore:2.0 AS base
 WORKDIR /app
 
-# host
-ENV ASPNETCORE_URLS http://+:50001
+
 EXPOSE 50001
 
 FROM microsoft/aspnetcore-build:2.0 AS build
