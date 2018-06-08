@@ -8,13 +8,13 @@ namespace Translator.Core.Windows
 {
     public class WindowsPowerShell : ITranslator
     {
-        private readonly ICommand chocolately = new Chocolately();
+        private readonly ICommand chocolatey = new Chocolatey();
 
         public string Translate(PackageDefinition packageDefinition)
         {
             try
             {
-                return chocolately.CreateStatements(packageDefinition);
+                return chocolatey.CreateStatements(packageDefinition);
             }
             catch (System.Exception)
             {
