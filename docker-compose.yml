@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  interfacebuilder.webapi:
+    image: translator.webapi
+    build:
+      context: .
+      dockerfile: Translator.WebApi/Dockerfile
