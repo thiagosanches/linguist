@@ -7,5 +7,4 @@ services:
       context: .
       dockerfile: Translator.WebApi/Dockerfile
      ports:
-      - "80:80"
-      - "50000:50000"
+      - "50001:50001"
