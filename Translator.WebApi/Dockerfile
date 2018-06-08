@@ -1,6 +1,5 @@
 FROM microsoft/aspnetcore:2.0 AS base
 WORKDIR /app
-
 ENV ASPNETCORE_URLS http://+:50001
 EXPOSE 50001
 
