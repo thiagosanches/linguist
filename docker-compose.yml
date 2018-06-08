@@ -6,5 +6,5 @@ services:
     build:
       context: .
       dockerfile: Translator.WebApi/Dockerfile
-     ports:
-      - "50001:50001"
+    ports:
+        - "50001:50001"
