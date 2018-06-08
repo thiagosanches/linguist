@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Translator.Model\Translator.Model.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Translator.Core\Translator.Core.csproj" />
+  </ItemGroup>
+</Project>
