@@ -11,7 +11,7 @@ The idea is to help managing some setup scripts to development machines, exposin
 ### Input
 ```
 {
-  "operationSystem": "LINUX",
+  "OS": "LINUX",
   "packages": ["git"]
 }
 ```
