@@ -6,6 +6,10 @@ The main purpose is to create a kind of translator that receives a known json an
 
 The idea is to help manage some setup scripts to development machines, exposing an API that can be used on front-end applications to build a better UX to the final user.
 
+For linux scripts it's considering to return a plain-text bash script and for Windows a Windows Powershell.
+
+Basically, we are supporting only apt-get on Linux and on Windows plataform it's mandatory to use the chocolatey application.
+
 ## Example
 
 ### Input
