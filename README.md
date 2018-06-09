@@ -26,4 +26,4 @@ The linguist support only apt-get on Linux and chocolatey on Windows plataform i
 
 ## Dependencies
 * apt-get (Debian based distros)
-* chocolatey (Windows 7+)
+* chocolatey (Windows 7+) [https://chocolatey.org/]
