@@ -6,10 +6,6 @@ The main purpose is to create a kind of translator that receives a known json an
 
 The idea is to help manage some setup scripts to development machines, exposing an API that can be used on front-end applications to build a better UX to the final user.
 
-For linux scripts it's considering to return a plain-text bash script and for Windows a Windows Powershell.
-
-Basically, we are supporting only apt-get on Linux and on Windows plataform it's mandatory to use the chocolatey application.
-
 ## Example
 
 ### Input
@@ -25,3 +21,9 @@ Basically, we are supporting only apt-get on Linux and on Windows plataform it's
 #!/bin/bash
 sudo apt-get install -y git
 ```
+
+The linguist support only apt-get on Linux and chocolatey on Windows plataform it's mandatory to install it (the script handle that).
+
+## Dependencies
+* apt-get (Debian based distros)
+* chocolatey (Windows 7+)
