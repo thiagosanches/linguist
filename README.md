@@ -6,15 +6,25 @@ The main purpose is to create a kind of translator that receives a known json an
 
 The idea is to help manage some setup scripts to development machines, exposing an API that can be used on front-end applications.
 
-### Example
+## Example
 
-## Input
+### Input
 ```
 {
-  "OS": "LINUX",
-  "packages": [
-    "git",
-    "vscode"
-  ]
+  "operatingSystem" : "LINUX",
+  "packages": ["git", "vscode"]
 }
+```
+
+### Linux Output
+```
+#!/bin/bash
+sudo apt-get install -y git
+sudo apt-get install -y vscode
+```
+
+### Windows Powershell Output
+```
+choco install -y git
+choco install -y vscode
 ```
