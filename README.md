@@ -11,7 +11,8 @@ The idea is to help manage some setup scripts to development machines, exposing 
 ### Input
 ```
 {
-  
+  "operationSystem": "LINUX",
+  "packages": ["git"]
 }
 ```
 
@@ -19,5 +20,4 @@ The idea is to help manage some setup scripts to development machines, exposing 
 ```
 #!/bin/bash
 sudo apt-get install -y git
-sudo apt-get install -y vscode
 ```
