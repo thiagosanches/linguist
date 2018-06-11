@@ -30,7 +30,8 @@ namespace Translator.WebApi
                     .WithMethods("GET", "POST")
                     .AllowAnyOrigin()
                     .AllowAnyHeader());
-            });
+            }); 
+            
             services.AddMvc();
         }
 
