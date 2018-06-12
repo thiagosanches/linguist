@@ -10,7 +10,6 @@ namespace Translator.WebApi.Controllers
     [EnableCors("AllowFromAll")]
     public class ValuesController : Controller
     {
-        // POST api/values
         [HttpPost]
         public string Post([FromBody]PackageDefinition packageDefinition)
         {
