@@ -9,6 +9,7 @@ using Translator.Core;
 namespace Translator.WebApi.Controllers
 {
     [Route("api/[controller]")]
+    [EnableCors("AllowFromAll")]
     public class ValuesController : Controller
     {
         // POST api/values
