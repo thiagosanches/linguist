@@ -9,7 +9,7 @@
   </ItemGroup>
   
   <ItemGroup>
-    <PackageReference Include="System.Web.Http.Cors" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Cors" />
   </ItemGroup>
 
   <ItemGroup>
