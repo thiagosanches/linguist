@@ -7,7 +7,7 @@ namespace Translator.Core.Windows
 {
     public class CustomCommand : ICommand
     {
-        public string CreateStatement(string packageName)
+        public string CreateStatement(Package packageName)
         {
             throw new NotImplementedException();
         }

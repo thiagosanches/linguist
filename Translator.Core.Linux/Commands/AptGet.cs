@@ -10,11 +10,11 @@ namespace Translator.Core.Linux
     {
         private const string INSTALL_STATEMENT = "apt-get install -y {0}";
 
-        public string CreateStatement(string packageName)
+        public string CreateStatement(Package packageName)
         {
             StringBuilder statement = new StringBuilder();
 
-            statement.AppendFormat(INSTALL_STATEMENT, packageName);
+            statement.AppendFormat(INSTALL_STATEMENT, packageName.Name);
             
             return statement.ToString();
         }

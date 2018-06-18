@@ -12,7 +12,7 @@ namespace Translator.Core.Windows
         private const string NEWLINE = "\r\n";
         private static bool AlreadyDefinedChocolatelyDependency { get; set; }
 
-        public string CreateStatement(string packageName)
+        public string CreateStatement(Package packageName)
         {
             string statement = string.Empty;
 
@@ -23,7 +23,7 @@ namespace Translator.Core.Windows
             }           
 
             statement += string.Format(INSTALLATION_STATEMENT, 
-                packageName);
+                packageName.Name);
 
             return statement;
         }
@@ -32,7 +32,7 @@ namespace Translator.Core.Windows
         {
             StringBuilder statement = new StringBuilder();
 
-            foreach (var item in packageDefinition.Packages)
+            foreach (Package item in packageDefinition.Packages)
             {
                 statement.AppendLine(CreateStatement(item));
             }

@@ -4,7 +4,7 @@ namespace Translator.Core.Linux.Interfaces
 {
     public interface ICommand 
     {
-        string CreateStatement(string packageName);
+        string CreateStatement(Package packageName);
 
         string CreateStatements(PackageDefinition packageDefinition);
     }

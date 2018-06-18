@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace Translator.Model 
@@ -8,6 +9,6 @@ namespace Translator.Model
         public string OperatingSystem { get; set; }
 
         [JsonProperty(PropertyName = "packages")]
-        public string[] Packages { get; set; }
+        public List<Package> Packages { get; set; }
     }
 }
