@@ -44,6 +44,7 @@ namespace Translator.WebApi
             }
 
             app.UseMvc();
+            app.UseCors("AllowFromAll");
         }
     }
 }

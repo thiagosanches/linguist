@@ -11,6 +11,7 @@ namespace Translator.WebApi.Controllers
     public class ValuesController : Controller
     {
         [HttpPost]
+        [EnableCors("AllowFromAll")]
         public string Post([FromBody]PackageDefinition packageDefinition)
         {
             try
