@@ -27,6 +27,7 @@ namespace Translator.WebApi
             {
                 options.AddPolicy("AllowFromAll",
                     builder => builder
+                    .WithOrigins("http://localhost:4200")
                     .WithMethods("GET", "POST")
                     .AllowAnyOrigin()
                     .AllowAnyHeader());
