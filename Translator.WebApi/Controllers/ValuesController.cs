@@ -7,17 +7,16 @@ using Translator.Core;
 namespace Translator.WebApi.Controllers
 {
     [Route("api/[controller]")]
-    [EnableCors("AllowFromAll")]
     public class ValuesController : Controller
     {
         [HttpPost]
         [EnableCors("AllowFromAll")]
-        public string Post([FromBody]PackageDefinition packageDefinition)
+        public string Post([FromBody]Recipe recipe)
         {
             try
             {
                 Resolver resolver = new Resolver();
-                return resolver.Translate(packageDefinition);
+                return resolver.Translate(recipe);
             }
             catch (Exception)
             {

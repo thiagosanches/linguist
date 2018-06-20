@@ -10,10 +10,10 @@ namespace Translator.Core
     {
         private static ITranslator translator;
 
-        public string Translate(PackageDefinition packageDefinition)
+        public string Translate(Recipe recipe)
         {
-            InjectDependency(packageDefinition.OperatingSystem);
-            return translator.Translate(packageDefinition);
+            InjectDependency(recipe.OperatingSystem);
+            return translator.Translate(recipe);
         }
 
         //A very dumb dependency injector mechanism. TODO: use a inject dependency container.

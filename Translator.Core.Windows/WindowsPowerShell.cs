@@ -9,14 +9,19 @@ namespace Translator.Core.Windows
     public class WindowsPowerShell : ITranslator
     {
         private readonly ICommand chocolatey = new Chocolatey();
+        private readonly ICommand git = new Git();
 
-        public string Translate(PackageDefinition packageDefinition)
+        public string Translate(Recipe recipe)
         {
             try
             {
-                return chocolatey.CreateStatements(packageDefinition);
+                StringBuilder stringBuilder = new StringBuilder();
+                stringBuilder.AppendLine(chocolatey.CreateStatements(recipe));
+                stringBuilder.AppendLine(git.CreateStatements(recipe));
+
+                return stringBuilder.ToString();
             }
-            catch (System.Exception)
+            catch (Exception)
             {
                 throw;
             }

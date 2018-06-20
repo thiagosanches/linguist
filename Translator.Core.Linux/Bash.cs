@@ -10,18 +10,20 @@ namespace Translator.Core.Linux
     {
         private const string SHEBANG = "#!/bin/bash";
         private readonly ICommand aptGet = new AptGet();
+        private readonly ICommand git = new Git();
 
-        public string Translate(PackageDefinition packageDefinition)
+        public string Translate(Recipe recipe)
         {
             StringBuilder shellScript = new StringBuilder();
             shellScript.AppendLine(SHEBANG);
 
             try
             {
-                shellScript.AppendLine(aptGet.CreateStatements(packageDefinition));
+                shellScript.AppendLine(aptGet.CreateStatements(recipe));
+                shellScript.AppendLine(git.CreateStatements(recipe));
                 return shellScript.ToString();
             }
-            catch (System.Exception)
+            catch (Exception)
             {
                 throw;
             }

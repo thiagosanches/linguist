@@ -4,8 +4,8 @@ namespace Translator.Core.Windows.Interfaces
 {
     public interface ICommand 
     {
-        string CreateStatement(Package package);
-
-        string CreateStatements(PackageDefinition packageDefinition);
+        string CreateStatement(string name);
+        string CreateStatement(Application package);
+        string CreateStatements(Recipe recipe);
     }
 }

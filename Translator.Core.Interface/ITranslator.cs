@@ -5,6 +5,6 @@ namespace Translator.Core.Interface
 {
     public interface ITranslator
     {
-        string Translate(PackageDefinition packageDefinition);
+        string Translate(Recipe recipe);
     }
 }

@@ -9,16 +9,18 @@ namespace Translator.Console
     {
         static void Main (string[] args) 
         {
-            List<Package> packages = new List<Package>();
-            packages.Add(new Package(){ Name = "git" });
-            packages.Add(new Package(){ Name = "vscode" });
+            List<Application> applications = new List<Application>();
+            applications.Add(new Application(){ Name = "git" });
+            applications.Add(new Application(){ Name = "vscode" });
 
-            PackageDefinition packageDefinition = new PackageDefinition();
-            packageDefinition.OperatingSystem = "LINUX";
-            packageDefinition.Packages = packages;
+            Recipe recipe = new Recipe();
+            recipe.OperatingSystem = "LINUX";
+            recipe.Applications = applications;
+            recipe.GitRepositories = new string[]{ "https://thiagom_cit@bitbucket.org/ciandt_it/brandscom.git", 
+                "https://thiagom_cit@bitbucket.org/ciandt_it/ccna-dev-ops.git" };
 
             Resolver resolver = new Resolver();
-            System.Console.WriteLine(resolver.Translate(packageDefinition));
+            System.Console.WriteLine(resolver.Translate(recipe));
         }
     }
 }
