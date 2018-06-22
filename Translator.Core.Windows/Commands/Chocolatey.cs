@@ -13,7 +13,10 @@ namespace Translator.Core.Windows
 
         public string CreateStatement(Application application)
         {
-            throw new NotImplementedException();
+            if (application.IsCustom)
+                return application.Setup;
+            else 
+                return CreateStatement(application.Name);
         }
 
         public string CreateStatement(string name)
@@ -28,7 +31,7 @@ namespace Translator.Core.Windows
 
             foreach (var item in recipe.Applications)
             {
-                statement.AppendLine(CreateStatement(item.Name));
+                statement.AppendLine(CreateStatement(item));
             }
 
             return statement.ToString();
