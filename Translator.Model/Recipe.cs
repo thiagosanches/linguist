@@ -5,7 +5,7 @@ namespace Translator.Model
 {
     public class Recipe
     {
-        [JsonProperty(PropertyName = "OS")]
+        [JsonProperty(PropertyName = "operatingSystem")]
         public string OperatingSystem { get; set; }
 
         [JsonProperty(PropertyName = "applications")]
