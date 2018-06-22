@@ -14,7 +14,7 @@ namespace Translator.Core.Linux
         {
             string statement = string.Empty;
 
-            if(application.IsCustom)
+            if (application.IsCustom)
                 statement += application.Setup;
             else
                 statement += string.Format(INSTALL_STATEMENT, application.Name);
