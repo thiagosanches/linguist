@@ -17,14 +17,14 @@ namespace Translator.Core
         }
 
         //A very dumb dependency injector mechanism. TODO: use a inject dependency container.
-        private void InjectDependency(string operationSystem)
+        private void InjectDependency(string operatingSystem)
         {
-            switch (operationSystem)
+            switch (operatingSystem.ToLower())
             {
-                case "LINUX":
+                case "linux":
                     translator = new Translator.Core.Linux.Bash();
                     break;
-                case "WINDOWS":
+                case "windows":
                     translator = new Translator.Core.Windows.WindowsPowerShell();
                     break;
             }
