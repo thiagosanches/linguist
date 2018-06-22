@@ -12,11 +12,14 @@ namespace Translator.Core.Linux
 
         public string CreateStatement(Application application)
         {
-            StringBuilder statement = new StringBuilder();
+            string statement = string.Empty;
 
-            statement.AppendFormat(INSTALL_STATEMENT, application.Name);
-            
-            return statement.ToString();
+            if(application.IsCustom)
+                statement += application.Setup;
+
+            statement += Environment.NewLine;
+            statement += string.Format(INSTALL_STATEMENT, application.Name);
+            return statement;
         }
 
         public string CreateStatements(Recipe recipe)

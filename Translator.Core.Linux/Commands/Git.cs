@@ -9,13 +9,11 @@ namespace Translator.Core.Linux
     public class Git : ICommand
     {
         private const string GIT_CLONE_STATEMENT = "git clone {0}";
-        private const string GIT_CREDENTIAL_HELPER_STATEMENT_ON = "git config credential.helper cache";
+        private const string GIT_CREDENTIAL_HELPER_STATEMENT_ON = "git config --global credential.helper 'cache --timeout=3600'";
         private const string GIT_CREDENTIAL_HELPER_STATEMENT_OFF = "git credential-cache exit";
         public string CreateStatement(string repository)
         {
-            StringBuilder statement = new StringBuilder();
-            statement.AppendFormat(GIT_CLONE_STATEMENT, repository);           
-            return statement.ToString();
+            return string.Format(GIT_CLONE_STATEMENT, repository);           
         }
 
         public string CreateStatement(Application packageName)

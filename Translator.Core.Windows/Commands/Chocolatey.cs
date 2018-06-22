@@ -7,39 +7,28 @@ namespace Translator.Core.Windows
 {
     public class Chocolatey : ICommand
     {
-        private const string CHOCOLATELY_DEPENDENCY = "Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))";
+        private const string INSTALL_CHOCOLATEY = @"Set-ExecutionPolicy Bypass -Scope Process -Force; 
+                                            iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))";
         private const string INSTALLATION_STATEMENT = "choco install -y {0}";
-        private const string NEWLINE = "\r\n";
-        private static bool AlreadyDefinedChocolatelyDependency { get; set; }
 
         public string CreateStatement(Application application)
         {
-            string statement = string.Empty;
-
-            if(!AlreadyDefinedChocolatelyDependency)
-            {
-                statement += string.Format("{0}{1}", CHOCOLATELY_DEPENDENCY, NEWLINE);
-                AlreadyDefinedChocolatelyDependency = true;
-            }           
-
-            statement += string.Format(INSTALLATION_STATEMENT, 
-                application.Name);
-
-            return statement;
+            throw new NotImplementedException();
         }
 
         public string CreateStatement(string name)
         {
-            throw new NotImplementedException();
+            return string.Format(INSTALLATION_STATEMENT, name);
         }
 
         public string CreateStatements(Recipe recipe)
         {
             StringBuilder statement = new StringBuilder();
+            statement.AppendLine(INSTALL_CHOCOLATEY);
 
             foreach (var item in recipe.Applications)
             {
-                statement.AppendLine(CreateStatement(item));
+                statement.AppendLine(CreateStatement(item.Name));
             }
 
             return statement.ToString();

@@ -14,9 +14,7 @@ namespace Translator.Core.Windows
         private const string GIT_ALIAS = @"Set-Alias git $env:programfiles\Git\bin\git.exe";
         public string CreateStatement(string repository)
         {
-            StringBuilder statement = new StringBuilder();
-            statement.AppendFormat(GIT_CLONE_STATEMENT, repository);           
-            return statement.ToString();
+            return string.Format(GIT_CLONE_STATEMENT, repository);           
         }
 
         public string CreateStatement(Application packageName)
