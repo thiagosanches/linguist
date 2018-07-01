@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  interfacebuilder.webapi:
+  linguist.webapi:
     image: translator.webapi
     build:
       context: .
