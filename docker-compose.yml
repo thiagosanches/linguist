@@ -8,3 +8,4 @@ services:
       dockerfile: Translator.WebApi/Dockerfile
     ports:
         - "50001:50001"
+    restart: always    
